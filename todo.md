@@ -1,0 +1,68 @@
+# SONIA.IA — TODO
+
+- [x] Site web initial avec design BD manga TikTok
+- [x] Section Hero avec mockup téléphone TikTok
+- [x] Générateur TikTok → BD (interface)
+- [x] Section "Comment ça marche" 4 étapes
+- [x] Galerie de BD
+- [x] Section À propos
+- [x] Tarifs (0,20€ / 5sec, 0,50€ / 10sec)
+- [x] Section Avant/Après avec lecteur vidéo TikTok 60 secondes
+- [x] Synchronisation planches BD ↔ vidéo en temps réel
+- [x] Intégration OpenAI API (GPT-4o scénario + DALL-E 3 images + TTS voix off)
+- [x] Route backend sonia.router.ts (generateScenario, generateVoiceover, generateBDImage)
+- [x] Hook useSonia.ts connecté aux routes backend
+- [x] Lecteur audio voix off OpenAI TTS dans le générateur
+- [x] Montage vidéo automatique : planches BD + voix off → MP4 9:16 TikTok
+- [x] Bouton "Télécharger MP4" dans le générateur
+- [x] Barre de progression montage FFmpeg
+- [x] Lecteur vidéo MP4 intégré dans le site
+- [ ] Transitions animées entre les planches BD dans la vidéo
+- [ ] Musique de fond optionnelle dans le montage
+- [x] API FastAPI TikTok scraping (port 8001) — déployée et fonctionnelle
+- [x] Connecter l'API FastAPI au router sonia.router.ts (fetchTikTokProfile amélioré)
+- [x] Améliorer les prompts DALL-E 3 (qualité manga shojo professionnelle)
+- [x] Analyse GPT-4o Vision : identification personnage + ambiance depuis avatar TikTok
+- [x] Pipeline complet : TikTok @username → FastAPI → Gemini Vision → Manus generateImage → MP4
+- [x] Corriger la correspondance visuelle @cyrilledorveaux76 (personnage BD fidèle, pas nu)
+- [x] Renforcer le prompt système GPT-4o Vision : description précise (âge, morphologie, vêtements, style)
+- [x] Ajouter des règles strictes anti-nudité dans les prompts DALL-E (vêtements obligatoires)
+- [x] Adapter le scénario au genre réel du personnage (homme/femme selon le profil)
+- [x] Injecter la bio TikTok réelle (signature) dans le prompt de scénario
+- [x] Passer la bio/signature depuis le frontend vers generateScenarioFromProfile
+- [x] Corriger le hook useSonia.ts pour transmettre la signature du profil
+- [x] Uploader la vraie photo de Cyrille vers le CDN et l'utiliser comme référence visuelle
+- [x] Enrichir le pipeline avec les vraies données : Paimpol, Bretagne, cuisine bretonne
+- [x] Améliorer la description du personnage : homme ~50 ans, lunettes rouges, veste doudoune bleue
+- [x] Créer un dictionnaire de profils enrichis (cyrilledorveaux76, lejtsonia) avec description précise
+- [x] Backend : générer 4 pages BD (pas seulement 1) + voix off par page
+- [x] Frontend : afficher 1 couverture pleine largeur + 4 pages en grille 2x2
+- [x] Voix off couverture = résumé de l'histoire (25-35 mots)
+- [x] Voix off par page = narration courte (15-20 mots) avec bouton lecture sur chaque page
+- [x] Montage vidéo 60 secondes : 5 segments (couverture 12s + 4 pages 12s chacune)
+- [x] Chaque segment utilise sa propre voix off (audio individuel par page)
+- [x] Assembler les 5 segments en séquence avec FFmpeg → MP4 9:16 TikTok
+
+- [x] Corriger le scénario : utiliser les vraies descriptions de vidéos TikTok (pas inventer)
+- [x] Corriger l'orthographe dans les bulles BD (prompt strict : français correct, pas de fautes)
+- [x] Supprimer les barres noires : vidéo plein écran 9:16 (scale+crop, pas letterbox)
+- [x] Générer musique bretonne synthétique (flûte celtique + bombarde + tambour, 84 secondes)
+- [x] Uploader la musique sur le CDN Manus
+- [x] Intégrer dans le montage FFmpeg (mixage voix off 100% + musique fond 18%)
+- [x] Générer toutes les musiques thématiques sur Suno et les intégrer
+- [x] Ajouter un champ prompt libre (ex: "Guerre au Moyen-Orient: l'Iran pose ses conditions") pour générer une BD sur n'importe quel sujet
+- [x] Ajouter un bouton téléchargement de la BD (images + vidéo MP4)
+- [x] Ajouter recherche automatique DuckDuckGo : le client tape un sujet → l'IA cherche sur internet → génère la BD avec les vraies infos trouvées
+- [x] Couverture BD avec titre 3D spectaculaire (texte en relief, couleurs vives, style BD manga)
+- [x] Musique de fond automatique pendant la lecture de la BD
+- [x] Bouton téléchargement individuel sur chaque image BD
+- [x] Bouton télécharger toutes les images BD d'un coup
+- [x] Télécharger 5 musiques libres de droits Pixabay (celtique, famille, humour, nostalgie, épique) pour YouTube/TikTok
+- [x] Uploader sur CDN et intégrer comme musique de fond dans les vidéos BD
+- [ ] Remplacer les musiques moches par de nouvelles musiques Suno haute qualité (prompts professionnels améliorés)
+- [x] Uploader Children (Remix).mp3 sur CDN et ajouter comme option de musique de fond dans SONIA.IA
+- [ ] Mettre à jour les tarifs : vidéo à 1,50€
+- [x] Mettre à jour les 6 packs tarifaires : Starter 1,80€ (1 vidéo), Essentiel 4,99€ (3), Famille 9,99€ (6), Créateur 14,99€ (10), Pro 19,99€ (15), Studio 29,99€ (25)
+- [x] Ajouter connexion Google (OAuth) pour les clients : bouton "Se connecter avec Google" dans la navbar et les packs tarifaires
+- [ ] Réduire la taille des images BD dans l'interface (trop grandes)
+- [ ] Ajouter bouton téléchargement pour la vidéo MP4 générée
